@@ -1,14 +1,13 @@
 import React from "react"
-import Image from "../components/image"
+//import Image from "../components/image"
 
 //Components
 import Layout from "../components/layout"
+import Image from "../components/image"
 
 const IndexPage = () => (
   <Layout>
-    <h1>Home</h1>
     <Image />
   </Layout>
 )
-
 export default IndexPage

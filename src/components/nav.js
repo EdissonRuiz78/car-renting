@@ -1,47 +1,37 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Nav, Navbar } from "react-bootstrap"
 
-//CSS
-import styled from "@emotion/styled"
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 3rem;
-
-  @media (min-width: 768px) {
-    padding-bottom: 0;
-  }
-`
-const NavLink = styled(Link)`
-  color: #fff;
-  padding: 1rem;
-  margin-right: 1rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1rem;
-  font-family: "PT Sans", sans-serif;
-  text-decoration: none;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &.active {
-    border-bottom: 2px solid #fff;
-  }
-`
+import Logo from "../images/logo.svg"
 
 const NavBar = () => {
   return (
-    <Nav>
-      <NavLink to={"/"} activeClassName="active">
-        Home
-      </NavLink>
-      <NavLink to={"/about"} activeClassName="active">
-        About
-      </NavLink>
-    </Nav>
+    <Navbar className="px-4" fixed="top" expand="md" bg="dark" variant="dark">
+      <Navbar.Brand href="/">
+        <img
+          src={Logo}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt="Luxury Car Rental Logo"
+        />{" "}
+        LUXURY CAR RENTAL
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse className="justify-content-end">
+        <Nav>
+          <Nav.Link as={Link} className="p-2 mx-2" to="/">
+            Home
+          </Nav.Link>
+          <Nav.Link as={Link} className="p-2 mx-2" to="/about">
+            About
+          </Nav.Link>
+          <Nav.Link as={Link} className="p-2 mx-2" to="/contact">
+            Contact
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   )
 }
 

@@ -1,50 +1,24 @@
 import React from "react"
 import Helmet from "react-helmet"
 
-//CSS
-import { Global, css } from "@emotion/core"
-
 //Components
 import Header from "./header"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Global
-        styles={css`
-          html {
-            font-size: 62.5%;
-          }
-          body {
-            font-size: 16px;
-            line-height: 1.5;
-          }
-          h1,
-          h2,
-          h3 {
-            margin: 0;
-            line-height: 1.5;
-          }
-          h1,
-          h2 {
-            font-family: "Roboto Slab", serif;
-          }
-          h3 {
-            font-family: "PT Sans", sans-serif;
-          }
-          ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-          }
-        `}
-      />
       <Helmet>
-        <title>Lux Car Renting</title>
+        <title>Luxury Car Rental</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
           integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
           crossorigin="anonymous"
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

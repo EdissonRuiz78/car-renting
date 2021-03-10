@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import Image from "gatsby-image"
-import Layout from "../components/layout"
 
 const Text = styled.div`
   max-width: 1200px;
@@ -24,9 +23,9 @@ const Text = styled.div`
   }
 `
 
-const About = () => {
-  const info = useStaticQuery(graphql`
-    query Query {
+const Content = () => {
+  const information = useStaticQuery(graphql`
+    query MyQuery {
       allDatoCmsPage(filter: { slug: { eq: "home" } }) {
         nodes {
           title
@@ -41,10 +40,10 @@ const About = () => {
     }
   `)
 
-  const { title, content, image } = info.allDatoCmsPage.nodes[0]
+  const { title, content, image } = information.allDatoCmsPage.nodes[0]
 
   return (
-    <Layout>
+    <>
       <h2
         css={css`
           text-align: center;
@@ -64,8 +63,8 @@ const About = () => {
         </div>
         <Image fluid={image.fluid} />
       </Text>
-    </Layout>
+    </>
   )
 }
 
-export default About
+export default Content

@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
 
 const ImgBackground = styled(BackgroundImage)`
-  height: 600px;
+  height: 500px;
 `
 const Text = styled.div`
   background-image: linear-gradient(

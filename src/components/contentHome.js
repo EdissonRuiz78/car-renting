@@ -23,7 +23,7 @@ const Text = styled.div`
   }
 `
 
-const Content = () => {
+const ContentHome = () => {
   const information = useStaticQuery(graphql`
     query MyQuery {
       allDatoCmsPage(filter: { slug: { eq: "home" } }) {
@@ -47,11 +47,11 @@ const Content = () => {
       <h2
         css={css`
           text-align: center;
-          font-size: 2.8rem;
-          margin-top: 2rem;
+          font-size: 2rem;
+          margin-top: 3rem;
         `}
       >
-        {title}
+        {title.toUpperCase()}
       </h2>
       <Text>
         <div>
@@ -67,4 +67,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export default ContentHome

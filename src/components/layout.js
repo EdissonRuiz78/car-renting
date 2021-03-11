@@ -1,5 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
+import { Global, css } from "@emotion/core"
 
 //Components
 import Header from "./header"
@@ -7,6 +8,26 @@ import Header from "./header"
 const Layout = ({ children }) => {
   return (
     <>
+      <Global
+        styles={css`
+          html {
+            box-sizing: border-box;
+          }
+          *,
+          *:before,
+          *:after {
+            box-sizing: inherit;
+          }
+          body {
+            font-family: "Roboto", sans-serif;
+          }
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        `}
+      />
       <Helmet>
         <title>Luxury Car Rental</title>
         <link

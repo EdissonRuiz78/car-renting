@@ -13,7 +13,6 @@ const Text = styled.div`
     rgba(34, 49, 63, 0.01)
   );
   color: #fff;
-  margin-top: 50px;
   height: "100%";
   display: flex;
   flex-direction: column;

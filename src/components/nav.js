@@ -6,7 +6,7 @@ import Logo from "../images/logo.svg"
 
 const NavBar = () => {
   return (
-    <Navbar className="px-4" fixed="top" expand="md" bg="dark" variant="dark">
+    <Navbar className="px-4" expand="md" bg="dark" variant="dark">
       <Navbar.Brand href="/">
         <img
           src={Logo}

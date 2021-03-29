@@ -1,8 +1,9 @@
 import React from "react"
 import Image from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import Layout from "./layout"
 
 const Content = styled.main`
   padding-top: 2rem;
@@ -21,9 +22,32 @@ const Content = styled.main`
   }
 `
 
-const Pages = () => {
+export const query = graphql`
+  query($slug: String!) {
+    allDatoCmsCar(filter: { slug: { eq: $slug } }) {
+      nodes {
+        slug
+        title
+        content
+        image {
+          fluid(maxWidth: 1200) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+  }
+`
+
+const Pages = ({
+  data: {
+    allDatoCmsCar: { nodes },
+  },
+}) => {
+  const { title, content, image } = nodes[0]
+
   return (
-    <>
+    <Layout>
       <h2
         css={css`
           margin-top: 2rem;
@@ -31,12 +55,13 @@ const Pages = () => {
           font-size: 3rem;
         `}
       >
-        CARS
+        {title}
       </h2>
       <Content>
-        <p>Hello</p>
+        <p>{content}</p>
+        <Image fluid={image.fluid} />
       </Content>
-    </>
+    </Layout>
   )
 }
 

@@ -4,6 +4,7 @@ import { Global, css } from "@emotion/core"
 
 //Components
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
@@ -50,6 +51,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }

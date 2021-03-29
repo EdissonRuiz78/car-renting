@@ -7,16 +7,16 @@ import Logo from "../images/logo.svg"
 const NavBar = () => {
   return (
     <Navbar className="px-4" expand="md" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
+      <Nav.Link as={Link} className="p-2 mx-2" to="/">
         <img
           src={Logo}
           width="30"
           height="30"
           className="d-inline-block align-top"
           alt="Luxury Car Rental Logo"
-        />{" "}
-        LUXURY CAR RENTAL
-      </Navbar.Brand>
+        />
+        <span className="ml-2 text-white">LUXURY CAR RENTAL</span>
+      </Nav.Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
